@@ -200,7 +200,7 @@ The following table shows how the extended Euclidean algorithm proceeds with inp
       <td>0</td>
       <td></td>
       <td>
-        <span style="color:green;">r <sub>0</sub>
+          <span style="color:green">a</span> 
       </td>
       <td>
         <span style="color:#964B00">1</span>
@@ -211,7 +211,7 @@ The following table shows how the extended Euclidean algorithm proceeds with inp
       <td>1</td>
       <td></td>
       <td>
-        <span style="color:green;">r <sub>1</sub>
+          <span style="color:green">b</span> 
       </td>
       <td>
         <span style="color:#964B00">0</span>
@@ -225,7 +225,10 @@ The following table shows how the extended Euclidean algorithm proceeds with inp
         </span>
       </td>
       <td>
-        <span style="color:green;">r <sub>2</sub>
+          <span style="color:green">a</span> 
+        - <span style="color:blue">q <sub>2</sub></span>
+        × <span style="color:green">b</span>
+        = <span style="color:olive;">r <sub>2</sub>
         </span>
       </td>
       <td>
@@ -246,7 +249,10 @@ The following table shows how the extended Euclidean algorithm proceeds with inp
         </span>
       </td>
       <td>
-        <span style="color:green;">r <sub>3</sub>
+          <span style="color:green">b</span> 
+        - <span style="color:blue">q <sub>3</sub></span>
+        × <span style="color:olive">r <sub>2</sub></span>
+        = <span style="color:olive;">r <sub>3</sub>
         </span>
       </td>
       <td>
@@ -266,7 +272,10 @@ The following table shows how the extended Euclidean algorithm proceeds with inp
         </span>
       </td>
       <td>
-        <span style="color:green;">r <sub>4</sub>
+          <span style="color:olive">r <sub>2</sub></span> 
+        - <span style="color:blue">q <sub>i</sub></span>
+        × <span style="color:olive">r <sub>3</sub></span>
+        = <span style="color:olive;">r <sub>4</sub>
         </span>
       </td>
       <td>
@@ -286,8 +295,10 @@ The following table shows how the extended Euclidean algorithm proceeds with inp
         </span>
       </td>
       <td>
-        <span style="color:red;">r <sub>5</sub>
-        </span>
+          <span style="color:olive">r <sub>3</sub></span> 
+        - <span style="color:blue">q <sub>i</sub></span>
+        × <span style="color:olive">r <sub>4</sub></span>
+        = <span style="color:red;">r <sub>5</sub></span>
       </td>
       <td>
         <span style="color:#964B00">s <sub>3</sub>
@@ -306,7 +317,10 @@ The following table shows how the extended Euclidean algorithm proceeds with inp
         </span>
       </td>
       <td>
-        <span style="color:red;">r <sub>6</sub>
+          <span style="color:olive">r <sub>4</sub></span> 
+        - <span style="color:blue">q <sub>i</sub></span>
+        × <span style="color:red">r <sub>5</sub></span>
+        = <span style="color:red;">r <sub>6</sub></span>
         </span>
       </td>
       <td>
