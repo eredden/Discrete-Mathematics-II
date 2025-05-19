@@ -1,0 +1,61 @@
+GCD AND LCM DEFINITIONS:
+The greatest common divisor (GCD) of non-zero integers x and y is the largest positive integer that is a factor of both x and y. 
+Ex. the GCD of 12 and 18 is 6.
+
+The least common multiple (LCM) of non-zero integers x and y is the smallest positive integer that is divisible both x and y. 
+Ex. the LCM of 12 and 15 is 60.
+
+CALCULATING THE GCD AND LCM:
+1. Get the prime factorizations of x and y.
+2. For prime factors present in one factorization and not the other, multiply it in and set it to the power of zero. This turns it into 1 so that the product is unchanged.
+3. Once both prime factorizations contain the same factors, get the maximum (LCM) or minimum (GCD) exponents from each factorization and combine that into the maximum or minimum factorization. The product will be the LCM or GCD. 
+Ex. 
+ - The prime factorization for 24 is 2^3 * 3.
+ - The prime factorization for 50 is 5^2 * 2.
+ - Note that prime factor 3 is unique to 24, and 5 is unique to 50.
+ - Multiply the factorization of 24 by 5^0 to get 5^0 * 2^3 * 3^1.
+ - Mulitply the factorization of 50 by 3^0 to get 5^2 * 2^1 * 3^0.
+ - The factorizations share the same prime factors, so we can continue.
+ - GCD(24, 50) = 2^min(3,1) * 3^min(1,0) * 5^min(0,2)
+ - GCD(24, 50) = 2^1 * 3^0 * 5^0
+ - GCD(24, 50) = 2
+Ex. 
+ - The prime factorization for 24 is 2^3 * 3.
+ - The prime factorization for 50 is 5^2 * 2.
+ - Note that prime factor 3 is unique to 24, and 5 is unique to 50.
+ - Multiply the factorization of 24 by 5^0 to get 5^0 * 2^3 * 3^1.
+ - Mulitply the factorization of 50 by 3^0 to get 5^2 * 2^1 * 3^0.
+ - The factorizations share the same prime factors, so we can continue.
+ - LCM(24, 50) = 2^max(3,1) * 3^max(1,0) * 5^max(0,2)
+ - LCM(24, 50) = 2^3 * 3^1 * 5^2
+ - LCM(24, 50) = 8 * 3 * 25
+ - LCM(24, 50) = 600
+
+PRACTICE PROBLEM EXAMPLES:
+Given:
+147 = 3^1 * 7^2
+315 = 3^2 * 5^1 * 7^1
+550 = 2^1 * 5^2 * 11^1
+
+Find GCD(147, 315):
+147 = 3^1 * 5^0 * 7^2
+315 = 3^2 * 5^1 * 7^1
+
+GCD(147, 315) = 3^1 * 5^0 * 7^1
+GCD(147, 315) = 21
+
+Find LCM(147, 315):
+147 = 3^1 * 5^0 * 7^2
+315 = 3^2 * 5^1 * 7^1
+
+LCM(147, 315) = 3^2 * 5^1 * 7^2
+LCM(147, 315) = 9 * 5 * 49
+LCM(147, 315) = 45 * 49
+LCM(147, 315) = 2205
+
+Find GCD(315, 550):
+315 = 2^0 * 3^2 * 5^1 * 7^1 * 11^0
+550 = 2^1 * 3^0 * 5^2 * 7^0 * 11^1
+
+GCD(315, 550) = 2^0 * 3^0 * 5^1 * 7^0 * 11^0
+GCD(315, 550) = 5
