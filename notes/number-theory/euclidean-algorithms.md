@@ -30,10 +30,23 @@ Let x and y be integers, then there are integers s and t such that:
 
 Ex. GCD(874, 2415) = (s * 874) + (t * 2415)
 
-Recall that the equation used for division and modulo operations is y = qx + r. We can modify this to solve for r, such that r = y - qx. We can eliminate q by substituting it with (y div x), such that:
-r = y - (y div x) * x
+Recall that the equation used for division and modulo operations is y = qx + r. We can modify this to solve for r, such that **r = y - qx.**
 
-With this knowledge in hand, you can find the Bezout coefficients (s, t) of the linear combination of x and y by using the tabular framework shown below.
+With this knowledge in hand, you can find the Bezout coefficients (s, t) of the linear combination of x and y by using the steps below:
+1. Perform the Euclidean Algorithm to get the GCD. Record x, y, q, and r values. Be especially conscious of the **y<sub>1</sub>** and **x<sub>1</sub>** values.
+2. For the second-to-last step of the Euclidean Algorithm where you got the GCD remainder value, substitute the values from that step into the equation **r<sub>n</sub> = y<sub>n</sub> - q<sub>n</sub>x<sub>n</sub>.** This will be referred to as the base equation.
+3. Repeat this for the step directly before the one where you got the GCD value by converting it into **r<sub>n-1</sub> = y<sub>n-1</sub> - q<sub>n-1</sub>x<sub>n-1</sub>** form. This will be referred to as the secondary equation.
+4. Notice how the remainder integer from the secondary equation pops up in the first equation as x. Substitute the second half of the secondary equation for that base equation, like so: **r<sub>n</sub> = y<sub>n</sub> - q<sub>n</sub> (y<sub>n-1</sub> - q<sub>n-1</sub>x<sub>n-1</sub>)**. This will be the final equation.
+5. Distribute **q<sub>n</sub>** to the terms exported from the secondary equation to escape the parentheses, but do not multiply the values. We want to keep the original **y<sub>1</sub>** and **x<sub>1</sub>** values intact so that we can find the true **s** and **t** values.
+6. Simplify the final equation into **r = sx * ty** form.
+
+Ex.
+
+- BASE EQUATION: 2 = 26 - (6 * 4)
+- SECONDARY EQUATION: 4 = 30 - (1 * 26)
+- FINAL EQUATION: 2 = 26 - (6 * 30 - (1 * 26))
+- DISTRIBUTING q<sub>n</sub>: 2 = 26 - 6 * 30 + 6 * 26
+- LINEAR FORM: 2 = (-6 * 30) + (7 * 26)
 
 ### EXTENDED EUCLIDEAN ALGORITHM TABULAR EXAMPLE:
 
