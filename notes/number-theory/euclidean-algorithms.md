@@ -39,6 +39,7 @@ With this knowledge in hand, you can find the Bezout coefficients (s, t) of the 
 4. Notice how the remainder integer from the secondary equation pops up in the first equation as x. Substitute the second half of the secondary equation for that base equation, like so: **r<sub>n</sub> = y<sub>n</sub> - q<sub>n</sub> (y<sub>n-1</sub> - q<sub>n-1</sub>x<sub>n-1</sub>)**. This will be the final equation.
 5. Distribute **q<sub>n</sub>** to the terms exported from the secondary equation to escape the parentheses, but do not multiply the values. We want to keep the original **y<sub>1</sub>** and **x<sub>1</sub>** values intact so that we can find the true **s** and **t** values.
 6. Simplify the final equation into **r = sx * ty** form.
+7. If it is still not solved, repeat the process again with the next previous remainder and the current linear form!
 
 Ex.
 
@@ -47,6 +48,26 @@ Ex.
 - FINAL EQUATION: 2 = 26 - (6 * 30 - (1 * 26))
 - DISTRIBUTING q<sub>n</sub>: 2 = 26 - 6 * 30 + 6 * 26
 - LINEAR FORM: 2 = (-6 * 30) + (7 * 26)
+
+Ex. GCF(81, 60)
+
+1. Standard Euclidean Algorithm steps:
+  - 81 mod 60 = 21
+  - 60 mod 21 = 18
+  - 21 mod 18 = 3 (GCF!)
+  - 18 mod 3 = 0
+2. Extended algorithm prep work:
+  - BASE EQUATION: 3 = 21 + (-1 * 18)
+  - SECONDARY EQUATION: 18 = 60 - (2 * 21)
+  - SECONDARY EQUATION: 21 = 81 - (1 * 60)
+3. Extended algorithm substitutions:
+  - 3 = 21 - (1 * 18)
+  - SUBSTITUTION (18): 3 = 21 - (1 * 60 - (2 * 21))
+  - 3 = (-1 * 60) + (3 * 21)
+  - SUBSTITUTION (21): 3 = (-1 * 60) + (3 * (81 - (1 * 60)))
+  - 3 = (-1 * 60) + (3 * 81 - (3 * 60))
+  - LINEAR FORM: 3 = (-4 * 60) + (3 * 81)
+
 
 ### EXTENDED EUCLIDEAN ALGORITHM TABULAR EXAMPLE:
 
