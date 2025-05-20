@@ -34,6 +34,10 @@ Recall that the equation used for division and modulo operations is y = qx + r. 
 
 With this knowledge in hand, you can find the Bezout coefficients (s, t) of the linear combination of x and y by using the steps below:
 1. Perform the Euclidean Algorithm to get the GCD. Record x, y, q, and r values. Be especially conscious of the **y<sub>1</sub>** and **x<sub>1</sub>** values.
+
+#### Avoid parentheses like the plague when doing the **Extended Euclidean Algorithm**, specifically when writing equations in **r = y - qx** form. Doing this can cause issues when substituting these equations into each other. Just avoid using parentheses even when you think they should be there. Trust me.
+
+
 2. For the second-to-last step of the Euclidean Algorithm where you got the GCD remainder value, substitute the values from that step into the equation **r<sub>n</sub> = y<sub>n</sub> - q<sub>n</sub>x<sub>n</sub>.** This will be referred to as the base equation.
 3. Repeat this for the step directly before the one where you got the GCD value by converting it into **r<sub>n-1</sub> = y<sub>n-1</sub> - q<sub>n-1</sub>x<sub>n-1</sub>** form. This will be referred to as the secondary equation.
 4. Notice how the remainder integer from the secondary equation pops up in the first equation as x. Substitute the second half of the secondary equation for that base equation, like so: **r<sub>n</sub> = y<sub>n</sub> - q<sub>n</sub> (y<sub>n-1</sub> - q<sub>n-1</sub>x<sub>n-1</sub>)**. This will be the final equation.
@@ -43,11 +47,11 @@ With this knowledge in hand, you can find the Bezout coefficients (s, t) of the 
 
 Ex.
 
-- BASE EQUATION: 2 = 26 - (6 * 4)
-- SECONDARY EQUATION: 4 = 30 - (1 * 26)
-- FINAL EQUATION: 2 = 26 - (6 * 30 - (1 * 26))
+- BASE EQUATION: 2 = 26 - 6 * 4
+- SECONDARY EQUATION: 4 = 30 - 1 * 26
+- FINAL EQUATION: 2 = 26 - 6 * 30 - 1 * 26
 - DISTRIBUTING q<sub>n</sub>: 2 = 26 - 6 * 30 + 6 * 26
-- LINEAR FORM: 2 = (-6 * 30) + (7 * 26)
+- LINEAR FORM: 2 = -6 * 30 + 7 * 26
 
 Ex. GCF(81, 60)
 
@@ -57,16 +61,16 @@ Ex. GCF(81, 60)
   - 21 mod 18 = 3 (GCF!)
   - 18 mod 3 = 0
 2. Extended algorithm prep work:
-  - BASE EQUATION: 3 = 21 + (-1 * 18)
-  - SECONDARY EQUATION: 18 = 60 - (2 * 21)
-  - SECONDARY EQUATION: 21 = 81 - (1 * 60)
+  - BASE EQUATION: 3 = 21 + -1 * 18
+  - SECONDARY EQUATION: 18 = 60 - 2 * 21
+  - SECONDARY EQUATION: 21 = 81 - 1 * 60
 3. Extended algorithm substitutions:
-  - 3 = 21 - (1 * 18)
-  - SUBSTITUTION (18): 3 = 21 - (1 * 60 - (2 * 21))
-  - 3 = (-1 * 60) + (3 * 21)
-  - SUBSTITUTION (21): 3 = (-1 * 60) + (3 * (81 - (1 * 60)))
-  - 3 = (-1 * 60) + (3 * 81 - (3 * 60))
-  - LINEAR FORM: 3 = (-4 * 60) + (3 * 81)
+  - 3 = 21 - 1 * 18
+  - SUBSTITUTION 18: 3 = 21 - 1 * 60 - 2 * 21
+  - 3 = -1 * 60 + 3 * 21
+  - SUBSTITUTION 21: 3 = -1 * 60 + 3 * 81 - 1 * 60
+  - 3 = -1 * 60 + 3 * 81 - 3 * 60
+  - LINEAR FORM: 3 = -4 * 60 + 3 * 81
 
 
 ### EXTENDED EUCLIDEAN ALGORITHM TABULAR EXAMPLE:
